@@ -1,0 +1,196 @@
+/* Basic styling for the entire app */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+/* Container for the repository list */
+.repo-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Styling for each repository row */
+.repo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.repo-row:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+/* Repo information section */
+.repo-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Styling for the avatar image */
+.repo-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+/* Repo text information */
+.repo-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.repo-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.repo-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Repo stats (stars, issues) */
+.repo-stats {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.repo-stats span {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Icons for stats */
+.stats-icon {
+  font-size: 1rem;
+  margin-right: 5px;
+}
+
+/* Drill-down arrow */
+.drilldown-arrow {
+  font-size: 1.5rem;
+  color: #777;
+  transition: transform 0.3s ease;
+}
+
+.drilldown-arrow.open {
+  transform: rotate(90deg);
+}
+
+/* Graph section */
+.graph-container {
+  padding: 15px;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.graph-header {
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* Commit and contributor graph sections */
+.graph-section {
+  margin-bottom: 30px;
+}
+
+/* Chart styling */
+.highcharts-root {
+  width: 100%;
+}
+
+/* Pagination buttons */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #cccccc;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .repo-container {
+    width: 95%;
+  }
+
+  .repo-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .repo-avatar img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .repo-name {
+    font-size: 1rem;
+  }
+
+  .repo-description {
+    font-size: 0.8rem;
+  }
+
+  .repo-stats span {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .repo-row {
+    padding: 10px;
+  }
+
+  .repo-avatar img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .repo-name {
+    font-size: 0.9rem;
+  }
+
+  .repo-description {
+    font-size: 0.75rem;
+  }
+
+  .repo-stats span {
+    font-size: 0.7rem;
+  }
+}
